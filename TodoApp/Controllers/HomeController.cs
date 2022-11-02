@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TodoApp.Models;
+using TodoRepositories.Interfaces;
 
 namespace TodoApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IActivityRepository _activityRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IActivityRepository activityRepository)
         {
             _logger = logger;
+            _activityRepository = activityRepository;
         }
 
         public IActionResult Index()
@@ -25,7 +28,8 @@ namespace TodoApp.Controllers
 
         public IActionResult Edit(int id)
         {
-            return View();
+           var activity = _activityRepository.ReadActivity(id);
+            return View(activity);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

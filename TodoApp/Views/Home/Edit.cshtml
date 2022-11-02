@@ -2,26 +2,31 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    var id = Model.Id;
+    var description = Model.Description;
+    var startTime = Model.StartTime;
+    var duration = Model.Duration;
+    var status = Model.Status;
 }
 
 <form action="/Activity/Create" method="Post">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Description</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="description">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@description" name="description">
         <div id="emailHelp" class="form-text">Add your task.</div>
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Start Time</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" name="startTime">
+        <input type="text" class="form-control" id="exampleInputPassword1" value="@startTime" name="startTime">
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Start Time</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" name="duration">
+        <label for="exampleInputPassword1" class="form-label">Duration</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" value="@duration" name="duration">
     </div>
 
     <div class="mb-3">
         <label class="form-check-label" for="exampleCheck1">Status</label>
-        <input type="text" class="form-control" id="exampleCheck1" name="status">
+        <input type="text" class="form-control" id="exampleCheck1" value="@status" name="status">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

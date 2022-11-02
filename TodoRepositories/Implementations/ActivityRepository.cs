@@ -25,7 +25,40 @@ namespace TodoRepositories.Implementations
 
         }
 
-       
+        public ActivityItem ReadActivity(int Id)
+        {
+            string queryString = " SELECT * from dbo.activities "
+            + "WHERE Id = @Id ";
+
+            int paramValue = Id;
+            ActivityItem activity = new ActivityItem();
+
+            using (SqlConnection connection = Db.GetSqlConnection())
+            {
+                // Create the Command and Parameter objects.
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.AddWithValue("@Id", paramValue);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                  
+                    activity.Id = (int)reader[0];
+                    activity.Description = (string)reader[1];
+                    activity.StartTime = (string)reader[2];
+                    activity.Duration = (string)reader[3];
+                    activity.Status = (string)reader[4];
+                }
+                reader.Close();
+
+            }
+
+
+            return activity;
+        }
+
 
         public List<ActivityItem> ReadAllActivity()
         {
@@ -74,7 +107,7 @@ namespace TodoRepositories.Implementations
                 // Create the Command and Parameter objects.
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Parameters.AddWithValue("@Id", paramValue);
-                command.Parameters.AddWithValue("@description", paramValue);
+                command.Parameters.AddWithValue("@@description", paramValue);
                 SqlDataReader reader = command.ExecuteReader();
 
 
