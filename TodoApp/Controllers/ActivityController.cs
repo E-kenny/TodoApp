@@ -31,26 +31,23 @@ namespace TodoApp.Controllers
             return View();
         }
 
-        // GET: ActivityController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ActivityController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // GET: ActivityController/Create
+        public ActionResult Create(string description, string startTime, string duration, string status)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _activityRepository.CreateActivity(description, startTime, duration, status);
+                return Redirect("/Activity");
             }
             catch
             {
-                return View();
+                return Redirect("/");
             }
+        
         }
+
+       
 
         // GET: ActivityController/Edit/5
         public ActionResult Edit(int id)
