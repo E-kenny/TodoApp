@@ -27,7 +27,6 @@
                 <td>@act.StartTime</td>
                 <td>@act.Duration </td>
                 <td>
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     @act.Status
                </td>
             <td>
@@ -35,8 +34,11 @@
                @{
                         <a asp-action="Edit" asp-controller="Home" asp-route-id="@act.Id">Edit</a>
                         <a asp-action="Delete" asp-route-id="@act.Id"> Delete </a>
-               }
+                                       }
                
+            </td>
+            <td>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
             </td>
         </tr>
            serialno++;
