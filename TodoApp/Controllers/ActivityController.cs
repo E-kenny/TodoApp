@@ -31,7 +31,7 @@ namespace TodoApp.Controllers
         {
             try
             {
-                _activityRepository.CreateActivity(description, startTime, duration, status);
+                _activityRepository.CreateActivity(description, startTime, duration);
                 return Redirect("/Activity");
             }
             catch

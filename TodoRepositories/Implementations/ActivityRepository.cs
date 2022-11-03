@@ -7,9 +7,9 @@ namespace TodoRepositories.Implementations
 {
     public class ActivityRepository : IActivityRepository
     {
-        public void CreateActivity(string description, string startTime, string duration, string status)
+        public void CreateActivity(string description, string startTime, string duration)
         {
-            string queryString = "INSERT INTO activities (description, startTime, duration, status, Created_at) VALUES(@description, @startTime, @duration, @status, GETDATE()); ";
+            string queryString = "INSERT INTO activities (description, startTime, duration, status, Created_at) VALUES(@description, @startTime, @duration, 'Not done', GETDATE()); ";
             using (SqlConnection connection = Db.GetSqlConnection())
             {
                 // Create the Command and Parameter objects.
@@ -17,7 +17,7 @@ namespace TodoRepositories.Implementations
                 command.Parameters.AddWithValue("@description", description);
                 command.Parameters.AddWithValue("@startTime", startTime);
                 command.Parameters.AddWithValue("@duration", duration);
-                command.Parameters.AddWithValue("@status", status);
+                //command.Parameters.AddWithValue("@status", status);
 
                 command.ExecuteNonQuery();
 

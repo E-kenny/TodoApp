@@ -5,7 +5,7 @@ namespace TodoRepositories.Interfaces
 {
     public interface IActivityRepository
     {
-        public void CreateActivity(string description, string startTime,string status, string duration);
+        public void CreateActivity(string description, string startTime,string duration);
         public ActivityItem ReadActivity(int Id);
         public List<ActivityItem> ReadAllActivity();
         public ActivityItem UpdateActivity(ActivityItem activityItem);
