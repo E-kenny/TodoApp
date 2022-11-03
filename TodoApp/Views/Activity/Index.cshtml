@@ -13,37 +13,29 @@
             <th scope="col" colspan="2">Description</th>
             <th scope="col">Start Time</th>
             <th scope="col">Duration</th>
-            <th scope="col">Status</th>
             <th>Actions</th>
+            <th scope="col">Status</th>         
         </tr>
     </thead>
     <tbody class="table-group-divider">
         @foreach (var act in Model)
-        {
-          
+        {     
             <tr>
             <th scope="row">@serialno</th>
                 <td colspan="2">@act.Description</td>
                 <td>@act.StartTime</td>
-                <td>@act.Duration </td>
-                <td>
-                    @act.Status
+                <td>@act.Duration </td>              
+               <td>               
+                    <a asp-action="Edit" asp-controller="Home" asp-route-id="@act.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@act.Id"> Delete </a>               
                </td>
-            <td>
-            
-               @{
-                        <a asp-action="Edit" asp-controller="Home" asp-route-id="@act.Id">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@act.Id"> Delete </a>
-                                       }
-               
-            </td>
-            <td>
+               <td>
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            </td>
+                       @* @act.Status     *@          
+               </td>
         </tr>
            serialno++;
         }
-
     </tbody>
 </table>
 
