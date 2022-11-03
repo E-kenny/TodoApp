@@ -6,7 +6,7 @@
     var description = Model.Description;
     var startTime = Model.StartTime;
     var duration = Model.Duration;
-    var status = Model.Status;
+   
 }
 
 <form action="/Activity/Edit/@id" method="Post">
@@ -22,11 +22,6 @@
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Duration</label>
         <input type="text" class="form-control" id="exampleInputPassword1" value="@duration" name="durationUpdate">
-    </div>
-
-    <div class="mb-3">
-        <label class="form-check-label" for="exampleCheck1">Status</label>
-        <input type="text" class="form-control" id="exampleCheck1" value="@status" name="statusUpdate">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

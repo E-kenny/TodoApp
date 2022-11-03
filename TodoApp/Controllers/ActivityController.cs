@@ -27,7 +27,7 @@ namespace TodoApp.Controllers
 
         [HttpPost]
         //GET: ActivityController/Create
-        public ActionResult Create(string description, string startTime, string duration, string status)
+        public ActionResult Create(string description, string startTime, string duration)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace TodoApp.Controllers
                 Description = descriptionUpdate,
                 StartTime = startTimeUpdate,
                 Duration = durationUpdate,
-                Status = statusUpdate
+               
 
             };
            _activityRepository.UpdateActivity(activity);

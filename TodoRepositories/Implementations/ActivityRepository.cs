@@ -9,7 +9,7 @@ namespace TodoRepositories.Implementations
     {
         public void CreateActivity(string description, string startTime, string duration)
         {
-            string queryString = "INSERT INTO activities (description, startTime, duration, status, Created_at) VALUES(@description, @startTime, @duration, 'Not done', GETDATE()); ";
+            string queryString = "INSERT INTO activities (description, startTime, duration, Created_at) VALUES(@description, @startTime, @duration, GETDATE()); ";
             using (SqlConnection connection = Db.GetSqlConnection())
             {
                 // Create the Command and Parameter objects.
@@ -17,7 +17,7 @@ namespace TodoRepositories.Implementations
                 command.Parameters.AddWithValue("@description", description);
                 command.Parameters.AddWithValue("@startTime", startTime);
                 command.Parameters.AddWithValue("@duration", duration);
-                //command.Parameters.AddWithValue("@status", status);
+               
 
                 command.ExecuteNonQuery();
 
@@ -44,7 +44,7 @@ namespace TodoRepositories.Implementations
                     activity.Description = (string)reader[1];
                     activity.StartTime = (string)reader[2];
                     activity.Duration = (string)reader[3];
-                    activity.Status = (string)reader[4];
+                  
                 }
                 reader.Close();
             }
@@ -68,7 +68,6 @@ namespace TodoRepositories.Implementations
                     activity.Description = (string)reader[1];
                     activity.StartTime = (string)reader[2];
                     activity.Duration = (string)reader[3];
-                    activity.Status = (string)reader[4];
                     allActivity.Add(activity);
                 }
                 reader.Close();
@@ -80,7 +79,7 @@ namespace TodoRepositories.Implementations
 
         public ActivityItem UpdateActivity(ActivityItem updatedData)
         {
-            string queryString = " Update dbo.activities SET description=@description, startTime=@startTime, duration=@duration, status=@status WHERE Id = @Id ";
+            string queryString = " Update dbo.activities SET description=@description, startTime=@startTime, duration=@duration WHERE Id = @Id ";
 
             int? paramValue = updatedData.Id;
             ActivityItem activity = new ActivityItem();
@@ -93,7 +92,7 @@ namespace TodoRepositories.Implementations
                 command.Parameters.AddWithValue("@description", updatedData.Description);
                 command.Parameters.AddWithValue("@startTime", updatedData.StartTime);
                 command.Parameters.AddWithValue("@duration", updatedData.Duration);
-                command.Parameters.AddWithValue("@status", updatedData.Status);
+            
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -101,7 +100,7 @@ namespace TodoRepositories.Implementations
                     activity.Description = (string)reader[1];
                     activity.StartTime = (string)reader[2];
                     activity.Duration = (string)reader[3];
-                    activity.Status = (string)reader[4];
+                   
                 }
                 reader.Close();
             }
@@ -162,7 +161,6 @@ namespace TodoRepositories.Implementations
                     activity.Description = (string)reader[1];
                     activity.StartTime = (string)reader[2];
                     activity.Duration = (string)reader[3];
-                    activity.Status = (string)reader[4];
                 }
                 reader.Close();
             }
