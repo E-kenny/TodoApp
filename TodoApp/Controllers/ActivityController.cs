@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Models;
+using TodoRepositories;
 using TodoRepositories.Interfaces;
 
 namespace TodoApp.Controllers
@@ -10,29 +11,22 @@ namespace TodoApp.Controllers
         private readonly IActivityRepository _activityRepository;
         public ActivityController(IActivityRepository activityRepository)
         {
-           
             _activityRepository = activityRepository;
         }
 
+
         // GET: ActivityController
         public ActionResult Index()
-        {
-           
+        {      
             var allActivities = _activityRepository.ReadAllActivity();
-            ViewData["allActivities"] = allActivities;
-                     
-             
+            ViewData["allActivities"] = allActivities;                                
             return View(allActivities);
         }
 
-        // GET: ActivityController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+      
 
         [HttpPost]
-        // GET: ActivityController/Create
+        //GET: ActivityController/Create
         public ActionResult Create(string description, string startTime, string duration, string status)
         {
             try
@@ -44,52 +38,31 @@ namespace TodoApp.Controllers
             {
                 return Redirect("/");
             }
-        
+
         }
 
-       
 
         // GET: ActivityController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id, string descriptionUpdate, string startTimeUpdate, string durationUpdate, string statusUpdate)
         {
-            return View();
+            var activity = new ActivityItem
+            {
+                Id = id,
+                Description = descriptionUpdate,
+                StartTime = startTimeUpdate,
+                Duration = durationUpdate,
+                Status = statusUpdate
+
+            };
+           _activityRepository.UpdateActivity(activity);
+            return Redirect("/Activity");
         }
 
-        // POST: ActivityController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: ActivityController/Delete/5
         public ActionResult Delete(int id)
         {
             _activityRepository.DeleteActivity(id);
             return Redirect("/Activity");
-        }
-
-        // POST: ActivityController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }
