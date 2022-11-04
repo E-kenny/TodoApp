@@ -11,6 +11,6 @@ namespace TodoRepositories.Interfaces
         public Task<ActivityItem> UpdateActivity(ActivityItem activityItem);
         public Task<ActivityItem> DeleteActivity(int Id);
         public Task<ActivityItem> DeleteOneOrMore(string Id);
-        public Task<ActivityItem> SearchActivity(string word);
+        public Task<ActivityItem> SearchActivities(string word);
     }
 }

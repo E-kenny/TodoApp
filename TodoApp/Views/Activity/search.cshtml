@@ -1,10 +1,10 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{ 
+@{
     int serialno = 1;
 }
-<h1> Hi, Decadev!</h1>
+<h1> Search Result</h1>
 <form class="row g-3" action="/Activity/Search" method="post">
     <div class="col-auto">
         <label for="inputPassword2" class="visually-hidden">Password</label>
@@ -27,31 +27,27 @@
             <th scope="col">Start Time</th>
             <th scope="col">Duration</th>
             <th>Actions</th>
-            <th scope="col">Status</th>         
+            <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
         @foreach (var act in Model)
-        {     
+        {
             <tr>
-            <th scope="row">@serialno</th>
+                <th scope="row">@serialno</th>
                 <td colspan="2">@act.Description</td>
                 <td>@act.StartTime</td>
-                <td>@act.Duration </td>              
-                <td>               
+                <td>@act.Duration </td>
+                <td>
                     <a asp-action="Edit" asp-controller="Home" asp-route-id="@act.Id">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@act.Id"> Delete </a>               
+                    <a asp-action="Delete" asp-route-id="@act.Id"> Delete </a>
                 </td>
                 <td>
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                       @* @act.Status     *@          
+                    @* @act.Status     *@
                 </td>
-        </tr>
-           serialno++;
+            </tr>
+            serialno++;
         }
     </tbody>
 </table>
-
-   
-  
-

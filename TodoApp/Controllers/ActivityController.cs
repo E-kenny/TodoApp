@@ -54,15 +54,39 @@ namespace TodoApp.Controllers
                
 
             };
-           _activityRepository.UpdateActivity(activity);
+           await _activityRepository.UpdateActivity(activity);
             return Redirect("/Activity");
         }
+
+        // POST: ActivityController
+        [HttpPost]
+        public async Task<ActionResult> Search(string word)
+        {
+            List<ActivityItem> allActivityList = new List<ActivityItem>();
+            var allActivities = await _activityRepository.SearchActivities(word);
+            if (allActivities.Id == null)
+            {
+                return Redirect("/Activity/NotFound");
+            }
+            else
+            {
+                allActivityList.Add(allActivities);
+                ViewData["allActivities"] = allActivities;
+                return View(allActivityList);
+            }
+        }
+
 
 
         public async Task<ActionResult> Delete(int id)
         {
-            _activityRepository.DeleteActivity(id);
+           await _activityRepository.DeleteActivity(id);
             return Redirect("/Activity");
+        }
+
+        public ActionResult NotFound()
+        {
+            return View();
         }
     }
 }

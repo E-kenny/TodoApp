@@ -143,17 +143,17 @@ namespace TodoRepositories.Implementations
         }
 
 
-        public async Task<ActivityItem> SearchActivity(string word)
+        public async Task<ActivityItem> SearchActivities(string word)
         {
             string queryString = " SELECT * from dbo.activities "
-            + "WHERE description LIKE % @word";
-            string paramValue = word;
+            + "WHERE description LIKE  @word";
+            string paramValue = "%"+word+"%";
             ActivityItem activity = new ActivityItem();
             using (SqlConnection connection = Db.GetSqlConnection())
             {
                 // Create the Command and Parameter objects.
                 SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.AddWithValue("@Id", paramValue);
+                command.Parameters.AddWithValue("@word", paramValue);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
