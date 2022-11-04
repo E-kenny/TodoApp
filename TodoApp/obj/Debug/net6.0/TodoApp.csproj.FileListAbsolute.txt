@@ -248,3 +248,4 @@ C:\Users\Decagon\source\repos\TodoApp\TodoApp\bin\Debug\net6.0\runtimes\win\lib\
 C:\Users\Decagon\source\repos\TodoApp\TodoApp\bin\Debug\net6.0\TodoRepositories.dll
 C:\Users\Decagon\source\repos\TodoApp\TodoApp\bin\Debug\net6.0\TodoRepositories.pdb
 C:\Users\Decagon\source\repos\TodoApp\TodoApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Decagon\source\repos\TodoApp\TodoApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll

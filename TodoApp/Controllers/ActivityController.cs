@@ -16,9 +16,9 @@ namespace TodoApp.Controllers
 
 
         // GET: ActivityController
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {      
-            var allActivities = _activityRepository.ReadAllActivity();
+            var allActivities = await _activityRepository.ReadAllActivity();
             ViewData["allActivities"] = allActivities;                                
             return View(allActivities);
         }
@@ -27,11 +27,11 @@ namespace TodoApp.Controllers
 
         [HttpPost]
         //GET: ActivityController/Create
-        public ActionResult Create(string description, string startTime, string duration)
+        public async Task<ActionResult> Create(string description, string startTime, string duration)
         {
             try
             {
-                _activityRepository.CreateActivity(description, startTime, duration);
+                await _activityRepository.CreateActivity(description, startTime, duration);
                 return Redirect("/Activity");
             }
             catch
@@ -43,7 +43,7 @@ namespace TodoApp.Controllers
 
 
         // GET: ActivityController/Edit/5
-        public ActionResult Edit(int id, string descriptionUpdate, string startTimeUpdate, string durationUpdate, string statusUpdate)
+        public async Task<ActionResult> Edit(int id, string descriptionUpdate, string startTimeUpdate, string durationUpdate, string statusUpdate)
         {
             var activity = new ActivityItem
             {
@@ -59,7 +59,7 @@ namespace TodoApp.Controllers
         }
 
 
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             _activityRepository.DeleteActivity(id);
             return Redirect("/Activity");

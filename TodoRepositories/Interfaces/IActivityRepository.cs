@@ -5,12 +5,12 @@ namespace TodoRepositories.Interfaces
 {
     public interface IActivityRepository
     {
-        public void CreateActivity(string description, string startTime,string duration);
-        public ActivityItem ReadActivity(int Id);
-        public List<ActivityItem> ReadAllActivity();
-        public ActivityItem UpdateActivity(ActivityItem activityItem);
-        public ActivityItem DeleteActivity(int Id);
-        public ActivityItem DeleteOneOrMore(string Id);
-        public ActivityItem SearchActivity(string word);
+        public Task CreateActivity(string description, string startTime,string duration);
+        public Task<ActivityItem> ReadActivity(int Id);
+        public Task<List<ActivityItem>> ReadAllActivity();
+        public Task<ActivityItem> UpdateActivity(ActivityItem activityItem);
+        public Task<ActivityItem> DeleteActivity(int Id);
+        public Task<ActivityItem> DeleteOneOrMore(string Id);
+        public Task<ActivityItem> SearchActivity(string word);
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -23,9 +24,17 @@ namespace TodoRepositories
 
         ////}
 
+        private readonly string _configuration;
+
+        //public Db(IConfiguration configuration)
+        //{
+        //    _configuration = configuration.GetConnectionString("");
+        //}
+
+
         public static SqlConnection GetSqlConnection()
         {
-            //SqlConnection sqlConnection = new SqlConnection(ConnectionString);
+           // SqlConnection sqlConnection = new SqlConnection(_configuration);
             SqlConnection sqlConnection = new SqlConnection("data source=.; database=todo; integrated security=SSPI");
             
             sqlConnection.Open();

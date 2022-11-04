@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h36W3LIhcvAoDiiEj3htB5EIYTVWrIUb1KaQgU4U3G+vs2kVnB3UePtm2HXMp5C7LOsUjSZNvOPoK8iZaFqBYw==",
+  "dgSpecHash": "VmYy/hQvqZeu/4s0L2CF/7bpwHKKpWlfugPA+WsvOL3ABE+ESMg94Qj/5Vcj57hla5LGzojJOPxLPDtJuOm1Kw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoApp\\TodoApp.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\Decagon\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\Decagon\\.nuget\\packages\\microsoft.diasymreader\\1.3.0\\microsoft.diasymreader.1.3.0.nupkg.sha512",
     "C:\\Users\\Decagon\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\6.0.10\\microsoft.dotnet.scaffolding.shared.6.0.10.nupkg.sha512",
+    "C:\\Users\\Decagon\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\Decagon\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Decagon\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
     "C:\\Users\\Decagon\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

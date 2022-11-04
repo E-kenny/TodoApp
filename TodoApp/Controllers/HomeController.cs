@@ -26,9 +26,9 @@ namespace TodoApp.Controllers
             return View();
         }
 
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-           var activity = _activityRepository.ReadActivity(id);
+           var activity =await _activityRepository.ReadActivity(id);
             return View(activity);
         }
 

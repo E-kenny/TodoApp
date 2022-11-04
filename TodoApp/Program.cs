@@ -1,13 +1,16 @@
 using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
+using System.Configuration;
+using System.Security.Cryptography.X509Certificates;
 using TodoRepositories.Implementations;
 using TodoRepositories.Interfaces;
+using Microsoft.Extensions.Configuration;
 
 namespace TodoApp
 {
     public class Program
     {
         public static void Main(string[] args)
-        {  
+        {
 
             var builder = WebApplication.CreateBuilder(args);
 

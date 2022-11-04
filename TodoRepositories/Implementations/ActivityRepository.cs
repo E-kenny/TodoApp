@@ -1,13 +1,13 @@
 ﻿using System.Data.SqlClient;
 using System.Diagnostics;
-
 using TodoRepositories.Interfaces;
+using System.Threading.Tasks;
 
 namespace TodoRepositories.Implementations
 {
     public class ActivityRepository : IActivityRepository
     {
-        public void CreateActivity(string description, string startTime, string duration)
+        public async Task  CreateActivity(string description, string startTime, string duration)
         {
             string queryString = "INSERT INTO activities (description, startTime, duration, Created_at) VALUES(@description, @startTime, @duration, GETDATE()); ";
             using (SqlConnection connection = Db.GetSqlConnection())
@@ -18,7 +18,7 @@ namespace TodoRepositories.Implementations
                 command.Parameters.AddWithValue("@startTime", startTime);
                 command.Parameters.AddWithValue("@duration", duration);
                
-
+               
                 command.ExecuteNonQuery();
 
             }
@@ -26,7 +26,7 @@ namespace TodoRepositories.Implementations
         }
 
 
-        public ActivityItem ReadActivity(int Id)
+        public async Task<ActivityItem> ReadActivity(int Id)
         {
             string queryString = " SELECT * from dbo.activities "
             + "WHERE Id = @Id ";
@@ -52,7 +52,7 @@ namespace TodoRepositories.Implementations
         }
 
 
-        public List<ActivityItem> ReadAllActivity()
+        public async Task<List<ActivityItem>> ReadAllActivity()
         {
             var allActivity = new List<ActivityItem>();
             string queryString = " SELECT * from dbo.activities ";
@@ -77,7 +77,7 @@ namespace TodoRepositories.Implementations
 
 
 
-        public ActivityItem UpdateActivity(ActivityItem updatedData)
+        public async Task<ActivityItem> UpdateActivity(ActivityItem updatedData)
         {
             string queryString = " Update dbo.activities SET description=@description, startTime=@startTime, duration=@duration WHERE Id = @Id ";
 
@@ -109,7 +109,7 @@ namespace TodoRepositories.Implementations
 
 
 
-        public ActivityItem DeleteActivity(int Id)
+        public async Task<ActivityItem> DeleteActivity(int Id)
         {
             string queryString = " DELETE FROM dbo.activities WHERE Id = @Id ";
             int paramValue = Id;
@@ -126,7 +126,7 @@ namespace TodoRepositories.Implementations
         }
 
 
-        public ActivityItem DeleteOneOrMore(string Id)
+        public async Task<ActivityItem> DeleteOneOrMore(string Id)
         {
             string queryString = " Update dbo.activities SET description WHERE Id = @Id ";
             string paramValue = Id;
@@ -143,7 +143,7 @@ namespace TodoRepositories.Implementations
         }
 
 
-        public ActivityItem SearchActivity(string word)
+        public async Task<ActivityItem> SearchActivity(string word)
         {
             string queryString = " SELECT * from dbo.activities "
             + "WHERE description LIKE % @word";
