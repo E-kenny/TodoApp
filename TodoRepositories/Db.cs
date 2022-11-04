@@ -11,30 +11,9 @@ namespace TodoRepositories
         {
 
         }
-        ////public static string ConnectionString
-        ////{
-        ////    get
-        ////    {
-        ////        ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["MyTodoconnection"];
-        ////        SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder(settings.ConnectionString);
-        ////        sb.ApplicationName = ApplicationName ?? sb.ApplicationName;
-        ////        sb.ConnectTimeout = ConnectionTimeout > 0 ? ConnectionTimeout : sb.ConnectTimeout;
-        ////        return sb.ToString();
-        ////    }
-
-        ////}
-
-        private readonly string _configuration;
-
-        //public Db(IConfiguration configuration)
-        //{
-        //    _configuration = configuration.GetConnectionString("");
-        //}
-
-
+        
         public static SqlConnection GetSqlConnection()
         {
-           // SqlConnection sqlConnection = new SqlConnection(_configuration);
             SqlConnection sqlConnection = new SqlConnection("data source=.; database=todo; integrated security=SSPI");
             
             sqlConnection.Open();
