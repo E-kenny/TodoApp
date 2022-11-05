@@ -7,7 +7,7 @@ namespace TodoRepositories.Implementations
 {
     public class ActivityRepository : IActivityRepository
     {
-        public async Task  CreateActivity(string description, string startTime, string duration)
+        public async Task  CreateActivity(string description, DateTime startTime, string duration)
         {
             string queryString = "INSERT INTO activities (description, startTime, duration, Created_at) VALUES(@description, @startTime, @duration, GETDATE()); ";
             using (SqlConnection connection = Db.GetSqlConnection())
@@ -42,7 +42,7 @@ namespace TodoRepositories.Implementations
                 {              
                     activity.Id = (int)reader[0];
                     activity.Description = (string)reader[1];
-                    activity.StartTime = (string)reader[2];
+                    activity.StartTime = (DateTime)reader[2];
                     activity.Duration = (string)reader[3];
                   
                 }
@@ -66,7 +66,7 @@ namespace TodoRepositories.Implementations
                     ActivityItem activity = new ActivityItem();
                     activity.Id = (int)reader[0];
                     activity.Description = (string)reader[1];
-                    activity.StartTime = (string)reader[2];
+                    activity.StartTime = (DateTime)reader[2];
                     activity.Duration = (string)reader[3];
                     allActivity.Add(activity);
                 }
@@ -98,7 +98,7 @@ namespace TodoRepositories.Implementations
                 {
                     activity.Id = (int)reader[0];
                     activity.Description = (string)reader[1];
-                    activity.StartTime = (string)reader[2];
+                    activity.StartTime = (DateTime)reader[2];
                     activity.Duration = (string)reader[3];
                    
                 }
@@ -159,7 +159,7 @@ namespace TodoRepositories.Implementations
                 {
                     activity.Id = (int)reader[0];
                     activity.Description = (string)reader[1];
-                    activity.StartTime = (string)reader[2];
+                    activity.StartTime = (DateTime)reader[2];
                     activity.Duration = (string)reader[3];
                 }
                 reader.Close();

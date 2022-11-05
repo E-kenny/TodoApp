@@ -9308,11 +9308,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoApp\\TodoApp.csproj",
+      "projectUniqueName": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoApp\\TodoApp.csproj",
       "projectName": "TodoApp",
-      "projectPath": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoApp\\TodoApp.csproj",
+      "projectPath": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoApp\\TodoApp.csproj",
       "packagesPath": "C:\\Users\\Decagon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoApp\\obj\\",
+      "outputPath": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Decagon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9329,8 +9329,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoRepositories\\TodoRepositories.csproj": {
-              "projectPath": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoRepositories\\TodoRepositories.csproj"
+            "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoRepositories\\TodoRepositories.csproj": {
+              "projectPath": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoRepositories\\TodoRepositories.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VmYy/hQvqZeu/4s0L2CF/7bpwHKKpWlfugPA+WsvOL3ABE+ESMg94Qj/5Vcj57hla5LGzojJOPxLPDtJuOm1Kw==",
+  "dgSpecHash": "6IvLXJdWWEt3bQOdJ9WmZHoPhHX+YvCbjctrEmZ7o13CZcIQzlxgWJxLgEg2S8ZHcS0BcFI1T7ahQX7/2As84g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoApp\\TodoApp.csproj",
+  "projectFilePath": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoApp\\TodoApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Decagon\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Decagon\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

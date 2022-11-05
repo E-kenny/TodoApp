@@ -991,11 +991,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoRepositories\\TodoRepositories.csproj",
+      "projectUniqueName": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoRepositories\\TodoRepositories.csproj",
       "projectName": "TodoRepositories",
-      "projectPath": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoRepositories\\TodoRepositories.csproj",
+      "projectPath": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoRepositories\\TodoRepositories.csproj",
       "packagesPath": "C:\\Users\\Decagon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Decagon\\source\\repos\\TodoApp\\TodoRepositories\\obj\\",
+      "outputPath": "C:\\Users\\Decagon\\source\\repos\\TodoAppWeek6\\TodoRepositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Decagon\\AppData\\Roaming\\NuGet\\NuGet.Config",

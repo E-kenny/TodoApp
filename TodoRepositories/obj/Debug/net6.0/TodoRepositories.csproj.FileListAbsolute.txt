@@ -10,3 +10,15 @@ C:\Users\Decagon\source\repos\TodoApp\TodoRepositories\obj\Debug\net6.0\TodoRepo
 C:\Users\Decagon\source\repos\TodoApp\TodoRepositories\obj\Debug\net6.0\refint\TodoRepositories.dll
 C:\Users\Decagon\source\repos\TodoApp\TodoRepositories\obj\Debug\net6.0\TodoRepositories.pdb
 C:\Users\Decagon\source\repos\TodoApp\TodoRepositories\obj\Debug\net6.0\ref\TodoRepositories.dll
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\bin\Debug\net6.0\TodoRepositories.deps.json
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\bin\Debug\net6.0\TodoRepositories.dll
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\bin\Debug\net6.0\TodoRepositories.pdb
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\TodoRepositories.csproj.AssemblyReference.cache
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\TodoRepositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\TodoRepositories.AssemblyInfoInputs.cache
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\TodoRepositories.AssemblyInfo.cs
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\TodoRepositories.csproj.CoreCompileInputs.cache
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\TodoRepositories.dll
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\refint\TodoRepositories.dll
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\TodoRepositories.pdb
+C:\Users\Decagon\source\repos\TodoAppWeek6\TodoRepositories\obj\Debug\net6.0\ref\TodoRepositories.dll

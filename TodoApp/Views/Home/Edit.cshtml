@@ -12,16 +12,16 @@
 <form action="/Activity/Edit/@id" method="Post">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Description</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@description" name="descriptionUpdate">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@description" name="descriptionUpdate" required>
         <div id="emailHelp" class="form-text">Add your task.</div>
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Start Time</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" value="@startTime" name="startTimeUpdate">
+        <input type="datetime-local" class="form-control" id="exampleInputPassword1" value="@startTime" name="startTimeUpdate" required>
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Duration</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" value="@duration" name="durationUpdate">
+        <input type="text" class="form-control" id="exampleInputPassword1" value="@duration" name="durationUpdate" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
